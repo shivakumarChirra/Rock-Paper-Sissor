@@ -77,7 +77,7 @@ struct ContentView: View {
                 }) {
                     Image("btnImage")
                         .resizable()
-                        .frame(width: 150, height: 50)
+                        .frame(width: 200, height: 70)
                         .cornerRadius(25)
                 }
 
@@ -110,10 +110,29 @@ struct ContentView: View {
                     }
                     Spacer()
                 }
+                Button(action: {
+                    reStart()
+                }) {
+                    Text("Re Start")
+                        .font(.title)
+                        .foregroundColor(.white)
+                        .padding()
+                        .frame(width: 150, height: 60)
+                        .clipShape(Capsule())
+                        .overlay(
+                            Capsule()
+                                .stroke(Color.white, lineWidth: 2)
+                        )
+                }
                 Spacer()
             }
         }
     }
+        func reStart (){
+            myScore = 0
+                yourScore = 0
+
+        }
 
     func doit() {
         let player1Value = Int.random(in: 1...3)
